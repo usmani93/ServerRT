@@ -11,9 +11,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy",
-        x => x.AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader());
+        x => x.AllowAnyHeader()
+                   .AllowAnyMethod()
+                   .SetIsOriginAllowed((host) => true)
+                   .AllowCredentials());
 });
 
 builder.Services.AddSignalR();
