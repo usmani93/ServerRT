@@ -191,7 +191,7 @@ namespace ServerRT.RTHub
 
         #region Private Helpers
 
-        private async Task SendUserListUpdate()
+        public async Task SendUserListUpdate()
         {
             _Users.ForEach(u => u.InCall = (GetUserCall(u.ConnectionId) != null));
             await Clients.All.UpdateUserList(_Users);
