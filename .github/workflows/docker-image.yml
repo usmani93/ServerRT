@@ -27,3 +27,4 @@ jobs:
       - name: Build Solution
         run: |
           msbuild.exe ServerRT.sln /p:platform="Any CPU" /p:configuration="Release"
+          
