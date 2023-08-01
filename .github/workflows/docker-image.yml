@@ -2,9 +2,9 @@ name: 'Docker File'
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
     
 jobs:
   build:
@@ -27,4 +27,4 @@ jobs:
       - name: Build Solution
         run: |
           msbuild.exe ServerRT.sln /p:platform="Any CPU" /p:configuration="Release"
-          
+        
